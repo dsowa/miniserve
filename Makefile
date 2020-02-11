@@ -1,6 +1,6 @@
 .PHONY: local
 local:
-	cargo build --release
+	cargo +nightly build --release
 
 .PHONY: run
 run:
@@ -11,7 +11,7 @@ endif
 
 .PHONY: build-linux
 build-linux:
-	cargo build --target x86_64-unknown-linux-musl --release --locked
+	cargo +nightly build --target x86_64-unknown-linux-musl --release --locked
 	strip target/x86_64-unknown-linux-musl/release/miniserve
 	upx target/x86_64-unknown-linux-musl/release/miniserve
 
